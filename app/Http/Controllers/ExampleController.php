@@ -7,7 +7,12 @@ use Illuminate\Http\Request;
 class ExampleController extends Controller
 {
     public function homePage() {
-        return '<h1>Homepage</h1> <a href="/about">Explore the company</a>';
+        // mockup database data
+        $someData = 'Brandon';
+        $skills = ['React', 'Autotests', 'Laravel'];
+
+        return view('homePage', 
+        ['workSkills'=>$skills, 'name'=>$someData, 'job'=>'QA Engineer']);
     }
 
     public function aboutPage() {
